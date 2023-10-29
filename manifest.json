@@ -1,0 +1,21 @@
+{
+    "name": "איפה יוסי?",
+    "short_name": "איפה יוסי?",
+    "start_url": ".",
+    "theme_color": "#4287f5",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "icons":[
+      {
+        "src":"media/Yossi.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src":"Media/Yossi512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  
+}
