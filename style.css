@@ -2,6 +2,7 @@ body {
     background-color: #212121;
     direction: rtl;
     max-height: fit-content;
+    font-family: "Arial";
 }
 
 .titleDiv {

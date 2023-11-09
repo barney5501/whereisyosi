@@ -21,8 +21,20 @@ function find(){
     sleep(2000).then(()=>{
         pic.src='./media/sad.png';
         txt.innerHTML = '';
-        sleep(50).then(()=>{alert('לא ניתן לגשת לשירותי המיקום של יוסי כרגע, אנא נסו שנית במועד מאוחר יותר')});
+        sleep(50).then(()=>{
+            // alert('לא ניתן לגשת לשירותי המיקום של יוסי כרגע, אנא נסו שנית במועד מאוחר יותר')
+            swal();
+        });
     })
     let btn = document.getElementById('btn');
     btn.disabled = true;
+}
+
+
+function swal(){
+    Swal.fire({
+        icon: "error",
+        // title: "Yosi404",
+        text: "לא ניתן לגשת לשירותי המיקום של יוסי כרגע, אנא נסו שנית במועד מאוחר יותר",
+      });
 }
