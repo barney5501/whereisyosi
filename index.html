@@ -3,30 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/x-icon" href="/media/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="media/favicon.ico">
     <link href="https://db.onlinewebfonts.com/c/fcdb09898219c98697d48e80b19def35?family=Aduma+Regular" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="index.js"></script>
     <title>Where's Yosi?</title>
 </head>
 <body>
 
-<div class="titleDiv">
+<div class="container">
+    <div class="titleDiv">
     <h1 id="title">
         איפה יוסי?
     </h1>
-</div>
+    </div>
 
-<div class="imageDiv">
     <img id="pic" src="media/image1.png" class="image"/>
+    
+    <div class="popText">
+        
+    </div>
 </div>
-
-<h1 id="txt"></h1>
 <div class="findButton">
-    <button id="btn" class="button-74" role="button" onclick="find()">מצא את יוסי</button>
+    <h1 id="txt"></h1>
+    <button id="btn" class="button-74" role="button" onclick="find()">
+        מצא את יוסי
+    </button>
 </div>
-
 </body>
+
+<script src="index.js"></script>
+<script lang="js">    
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve,ms));
+}
+
+function find(){
+    let pic = document.getElementById('pic')
+    pic.src="./media/earth_loader.gif"
+
+    let txt = document.getElementById('txt')
+    txt.innerText = 'מאתר...'
+
+    sleep(2000).then(()=>{
+        pic.src='./media/sad.png';
+        txt.innerHTML = '';
+        sleep(50).then(()=>{
+            // alert('לא ניתן לגשת לשירותי המיקום של יוסי כרגע, אנא נסו שנית במועד מאוחר יותר')
+            swal();
+        });
+    })
+    let btn = document.getElementById('btn');
+    btn.disabled = true;
+}
+function swal(){
+    Swal.fire({
+        icon: "error",
+        // title: "Yosi404",
+        text: "לא ניתן לגשת לשירותי המיקום של יוסי כרגע, אנא נסו שנית במועד מאוחר יותר",
+      });
+}
+</script>
 </html>
